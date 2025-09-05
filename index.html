@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tetris Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="tetris-container">
+    <h1>Tetris</h1>
+    <div class="game-area">
+      <canvas id="tetris" width="200" height="400"></canvas>
+      <div class="sidebar">
+        <div class="next-piece-container">
+          <h2>Next Piece</h2>
+          <canvas id="next-piece" width="80" height="80"></canvas>
+        </div>
+        <div class="info">
+          <div>Score: <span id="score">0</span></div>
+          <div>Lines: <span id="lines">0</span></div>
+          <div>Level: <span id="level">0</span></div>
+        </div>
+        <button id="toggle-ai" style="margin-top: 10px; padding: 8px 16px; font-size: 16px;">Enable AI</button>
+        <button id="toggle-music" style="margin-top: 10px; padding: 8px 16px; font-size: 16px;">Mute Music</button>
+      </div>
+    </div>
+    <p class="instructions">Use arrow keys to move and rotate the pieces. Space to drop.</p>
+    <!-- Download tetris-theme.mp3 from https://freesound.org/data/previews/316/316847_5123451-lq.mp3 and place it in the project folder -->
+    <audio id="tetris-music" loop autoplay style="display: none;" volume="0">
+      <source src="580443_Tetris-8bit.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

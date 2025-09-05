@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Roboto Mono', monospace;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tetris-container {
+  background: #222;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  padding: 20px 30px;
+  text-align: center;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #61dafb;
+  text-shadow: 0 0 10px #61dafb;
+}
+
+canvas {
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+}
+
+button {
+  color: white;
+  background-color: gray;
+  border: 2px solid #61dafb;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.instructions {
+  font-size: 14px;
+  color: #ccc;
+  margin: 10px 0 0 0;
+}
+
+.next-piece-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.next-piece-container h2 {
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  color: #61dafb;
+}
+
+#next-piece {
+  border: 2px solid #61dafb;
+  border-radius: 8px;
+  background: #000;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+  display: block;
+  margin: 10px auto; /* add margin around */
+  padding: 4px; /* add padding inside */
+}
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
