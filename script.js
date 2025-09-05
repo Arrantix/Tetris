@@ -206,7 +206,7 @@ function collide(arena, player) {
 }
 
 function arenaSweep() {
-  let rowCount = 1;
+  let linesCleared = 0;
   outer: for (let y = arena.length - 1; y > 0; --y) {
     for (let x = 0; x < arena[y].length; ++x) {
       if (arena[y][x] === 0) {
@@ -218,10 +218,31 @@ function arenaSweep() {
     arena.unshift(row);
     ++y;
 
-    player.score += rowCount * 10;
-    player.lines++;
+    linesCleared++;
+  }
+
+  if (linesCleared > 0) {
+    const levelMultiplier = player.level + 1;
+    let points = 0;
+    switch (linesCleared) {
+      case 1:
+        points = 40 * levelMultiplier;
+        break;
+      case 2:
+        points = 100 * levelMultiplier;
+        break;
+      case 3:
+        points = 300 * levelMultiplier;
+        break;
+      case 4:
+        points = 1200 * levelMultiplier;
+        break;
+      default:
+        points = linesCleared * 100 * levelMultiplier; // fallback for >4 lines
+    }
+    player.score += points;
+    player.lines += linesCleared;
     player.level = Math.floor(player.lines / 10);
-    rowCount *= 2;
   }
 }
 
