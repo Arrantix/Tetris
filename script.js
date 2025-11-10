@@ -302,7 +302,7 @@ update();
 
 
 
-// Add toggle music button event listener
+
 const toggleMusicButton = document.getElementById('toggle-music');
 const tetrisMusic = document.getElementById('tetris-music');
 
@@ -326,12 +326,11 @@ toggleMusicButton.addEventListener('click', () => {
 function drawNextPiece() {
   nextPieceContext.fillStyle = '#000';
   nextPieceContext.fillRect(0, 0, nextPieceCanvas.width, nextPieceCanvas.height);
-  // Calculate offset to perfectly center the piece in the 4x4 preview canvas with visual tweak
   const matrix = player.nextMatrix;
   const width = matrix[0].length;
   const height = matrix.length;
-  const offsetX = (4 - width) / 2 + 0.15; // small visual nudge
-  const offsetY = (4 - height) / 2 + 0.15; // small visual nudge
+  const offsetX = (4 - width) / 2 + 0.15;
+  const offsetY = (4 - height) / 2 + 0.15;
   drawMatrix(matrix, {x: offsetX, y: offsetY}, nextPieceContext);
 }
 
@@ -342,7 +341,7 @@ function drawMatrix(matrix, offset, ctx = context, drawBorders = false) {
         ctx.fillStyle = colors[value];
         ctx.fillRect(x + offset.x, y + offset.y, 1, 1);
         if (drawBorders) {
-          ctx.strokeStyle = '#000'; // black border for separation
+          ctx.strokeStyle = '#000';
           ctx.lineWidth = 0.05;
           ctx.strokeRect(x + offset.x, y + offset.y, 1, 1);
         }
@@ -744,5 +743,6 @@ update = function(time = 0) {
   draw();
   requestAnimationFrame(update);
 };
+
 
 
